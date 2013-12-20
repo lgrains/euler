@@ -1,0 +1,9 @@
+#!/user/bin/env ruby
+
+$: << File.join(File.dirname(__FILE__), '..', 'lib')
+require 'euler'
+
+# puts Euler::Prob1.validate_grid ARGV[0].to_s
+
+require 'euler/cli'
+Euler::CLI.start
