@@ -12,5 +12,10 @@ module Euler
     def prob2(upper_limit)
       puts Euler::Prob2.new(upper_limit).sum
     end
+
+    desc "prob3 ITEM", "finds the largest prime factor of ITEM"
+    def prob3(number)
+      puts Euler::Prob3.new(number).largest
+    end
   end
 end
