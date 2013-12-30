@@ -22,5 +22,10 @@ module Euler
     def prob4(number)
       puts Euler::Prob4.new(number).largest_palindrome
     end
+
+    desc "prob5 ITEM", "finds the LCM of a range of numbers"
+    def prob5(range)
+      puts Euler::Prob5.new(range).least_common_multiple
+    end
   end
 end
