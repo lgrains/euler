@@ -17,5 +17,10 @@ module Euler
     def prob3(number)
       puts Euler::Prob3.new(number).largest
     end
+
+    desc "prob4 ITEM", "finds the largest palindrome number from num_digits"
+    def prob4(number)
+      puts Euler::Prob4.new(number).largest_palindrome
+    end
   end
 end
