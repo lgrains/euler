@@ -44,7 +44,7 @@ module Euler
     end
 
     desc "prob11 ITEM", "finds the max product of 4 consecutive numbers in grid"
-    def prob11
+    def prob11(grid_file_name)
       puts Euler::Prob11.new(grid_file_name).max_prod_of_4
     end
   end
