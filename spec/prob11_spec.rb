@@ -1,10 +1,20 @@
 require 'euler/prob11'
 
 describe Euler::Prob11 do
-  # context "final answer" do
-  #   subject { Euler::Prob11.new("tmp/5grid.txt").max_prod_of_4 }
-  #   it { should == 9507960 }
-  # end
+  context "put_zeros_on_top_and_bottom" do
+    subject { Euler::Prob11.new("tmp/5grid.txt") }
+    it { subject.grid.should ==[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 8, 2, 22, 97, 38, 0, 0, 0],
+                                [0, 0, 0, 49, 49, 99, 40, 17, 0, 0, 0],
+                                [0, 0, 0, 81, 49, 31, 73, 55, 0, 0, 0],
+                                [0, 0, 0, 52, 70, 95, 23, 4, 0, 0, 0],
+                                [0, 0, 0, 22, 31, 16, 71, 51, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]] }
+  end
 
   context "max_prod_of_rows" do
     subject { Euler::Prob11.new("tmp/5grid.txt").max_prod_of_rows }
@@ -16,63 +26,43 @@ describe Euler::Prob11 do
     it { should == 6514520 }
   end
 
-  context "get_horizontal_row_product" do
-    subject { Euler::Prob11.new("tmp/5grid.txt").pick_four_horizontal_prod(0,0) }
-    it { should == 34144 }
+  context "pick_four_horizontal_prod" do
+    subject { Euler::Prob11.new("tmp/5grid.txt").pick_four_horizontal_prod(3,4) }
+    it { should == 162184 }
   end
 
-  context "get_vertical_row_prod" do
-    subject { Euler::Prob11.new("tmp/5grid.txt").pick_four_vertical_prod(0,0) }
-    it { should == 1651104 }
+  context "pick_four_vertical_prod" do
+    subject { Euler::Prob11.new("tmp/5grid.txt").pick_four_vertical_prod(3,4) }
+    it { should == 336140 }
   end
 
-  context "pick_four_diag_lr_prod_equal" do
-    subject { Euler::Prob11.new("tmp/5grid.txt").pick_four_diag_lr_prod_equal(0) }
-    it { should == 279496 }
+  context "pick_four_l2r_diag_prod" do
+    subject { Euler::Prob11.new("tmp/5grid.txt").pick_four_l2r_diag_prod(3,4) }
+    it { should == 57816 }
   end
 
-  context "calc_max_prod_equal" do
-    subject { Euler::Prob11.new("tmp/5grid.txt").calc_max_prod_equal(0)}
-    it { should == 1781787 }
+  context "max_prod_of_l2r_diags" do
+    subject { Euler::Prob11.new("tmp/5grid.txt").max_prod_of_l2r_diags }
+    it {should == 16194745}
   end
 
-  context "pick_four_diag_greater_prod" do
-    subject { Euler::Prob11.new("tmp/5grid.txt").pick_four_diag_greater_prod(1,0)}
-    it {should == 16194745 }
+  context "pick_four_r2l_up_diags_prod" do
+    subject { Euler::Prob11.new("tmp/5grid.txt").pick_four_r2l_up_diags_prod(7,3) }
+    it { should == 1909600 }
   end
 
-  context "calc_max_prod_row_greater" do
-    subject { Euler::Prob11.new("tmp/5grid.txt").calc_max_prod_row_greater(1,0)}
-    it {should == 16194745 }
+  context "max_prod_of_l2r_up_diags" do
+    subject { Euler::Prob11.new("tmp/5grid.txt").max_prod_of_l2r_up_diags }
+    it {should == 24468444}
   end
 
-  context "pick_four_diag_less_prod" do
-    subject { Euler::Prob11.new("tmp/5grid.txt").pick_four_diag_less_prod(0,1)}
-    it {should == 57816 }
+  context "pick_four_r2l_up_diags_prod" do
+    subject { Euler::Prob11.new("tmp/5grid.txt").pick_four_r2l_up_diags_prod(7,4) }
+    it { should == 3654745 }
   end
 
-  context "calc_max_prod_row_less" do
-    subject { Euler::Prob11.new("tmp/5grid.txt").calc_max_prod_row_less(0,1)}
-    it {should == 57816 }
-  end
-
-  context "pick_four_diag_up_prod_equal" do
-    subject { Euler::Prob11.new("tmp/5grid.txt").pick_four_diag_up_prod_equal(0,4)}
-    it {should == 3298400 }
-  end
-
-  context "calc_max_prod_equal_up" do
-    subject { Euler::Prob11.new("tmp/5grid.txt").calc_max_prod_equal_up(0,4)}
-    it {should == 3298400 }
-  end
-
-  context 'pick_four_diag_up_prod_upper' do
-    subject { Euler::Prob11.new("tmp/5grid.txt").pick_four_diag_up_prod_upper(3,0)}
-    it {should == 24468444 }
-  end
-
-  context "calc_max_prod_equal_up" do
-    subject { Euler::Prob11.new("tmp/5grid.txt").calc_max_prod_equal_up(3,0)}
+  context "find_max_product_of_four" do
+    subject { Euler::Prob11.new("tmp/5grid.txt").find_max_product_of_four }
     it {should == 24468444 }
   end
 end

@@ -45,7 +45,12 @@ module Euler
 
     desc "prob11 ITEM", "finds the max product of 4 consecutive numbers in grid"
     def prob11(grid_file_name)
-      puts Euler::Prob11.new(grid_file_name).max_prod_of_4
+      puts Euler::Prob11.new(grid_file_name).find_max_product_of_four
+    end
+
+    desc "prob12 ITEM", "finds first triangular number with more than 500 factors"
+    def prob12
+      puts Euler::Prob12.find_answer(num_factors)
     end
   end
 end

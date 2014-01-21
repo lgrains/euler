@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "cucumber"
   spec.add_development_dependency "aruba"
+  spec.add_development_dependency "racksh"
 
   spec.add_dependency "thor"
 end
