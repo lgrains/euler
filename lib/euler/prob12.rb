@@ -1,32 +1,36 @@
 module Euler
   class Prob12
-
-    def initialize(num_factors)
-      @num_factors = num_factors
-      @tri_num_array = [1]
-      @first_num = 2
-    end
+    require 'prime'
+    require 'set'
 
     def self.generate_triangular_number(n)
       n*(n+1)/2
     end
 
-    def self.find_factor_count(n)
-      count = 1
-      2.upto(n) do |f|
-        count += 1 if n % f == 0
+    def self.find_answer(num_factors)
+      puts Time.now
+      n = 2
+      num_factors_int = num_factors.to_i
+      @tri_num_array= []
+      factors = factors_of(generate_triangular_number(n))
+      puts "  #{factors.each{|f| p f}}  #{factors.to_set.length} "
+      while factors.to_set.length <= num_factors_int do
+        @tri_num_array << generate_triangular_number(n+=1)
+         factors = factors_of(generate_triangular_number(n))
+         puts "  #{factors.each{|f| p f}}  #{factors.to_set.length} "
       end
-      count
+      puts Time.now
+      @tri_num_array.last
     end
 
-    def self.find_answer(num_factors)
-      n = 2
-      @tri_num_array= []
-      while find_factor_count(self.generate_triangular_number(n)) <= num_factors do
-        puts "  #{n}   #{generate_triangular_number(n)}  #{find_factor_count(generate_triangular_number(n))} "
-        @tri_num_array << generate_triangular_number(n+=1)
+    # http://stackoverflow.com/questions/3398159/all-factors-of-a-given-number
+    def self.factors_of(number)
+      primes, powers = number.prime_division.transpose
+      exponents = powers.map{|i| (0..i).to_a}
+      divisors = exponents.shift.product(*exponents).map do |powers|
+        primes.zip(powers).map{|prime, power| prime ** power}.inject(:*)
       end
-      @tri_num_array.last
+      divisors.sort.map{|div| [div, number / div]}
     end
   end
 end

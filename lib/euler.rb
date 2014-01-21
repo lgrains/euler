@@ -8,6 +8,7 @@ require "euler/prob6"
 require "euler/prob8"
 require "euler/prob9"
 require "euler/prob11"
+require "euler/prob12"
 
 module Euler
   # Your code goes here...

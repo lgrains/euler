@@ -49,7 +49,7 @@ module Euler
     end
 
     desc "prob12 ITEM", "finds first triangular number with more than 500 factors"
-    def prob12
+    def prob12(num_factors)
       puts Euler::Prob12.find_answer(num_factors)
     end
   end
