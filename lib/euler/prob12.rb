@@ -7,20 +7,32 @@ module Euler
       n*(n+1)/2
     end
 
+    # def self.find_answer(num_factors)
+    #   puts Time.now
+    #   n = 2
+    #   num_factors_int = num_factors.to_i
+    #   @tri_num_array= []
+    #   factors = factors_of(generate_triangular_number(n))
+    #   puts "  #{factors.each{|f| p f}}  #{factors.to_set.length} "
+    #   while factors.to_set.length <= num_factors_int do
+    #     @tri_num_array << generate_triangular_number(n+=1)
+    #      factors = factors_of(generate_triangular_number(n))
+    #      puts "  #{factors.each{|f| p f}}  #{factors.to_set.length} "
+    #   end
+    #   puts Time.now
+    #   @tri_num_array.last
+    # end
+
     def self.find_answer(num_factors)
       puts Time.now
       n = 2
       num_factors_int = num_factors.to_i
-      @tri_num_array= []
-      factors = factors_of(generate_triangular_number(n))
-      puts "  #{factors.each{|f| p f}}  #{factors.to_set.length} "
-      while factors.to_set.length <= num_factors_int do
-        @tri_num_array << generate_triangular_number(n+=1)
-         factors = factors_of(generate_triangular_number(n))
-         puts "  #{factors.each{|f| p f}}  #{factors.to_set.length} "
+      until num_factors_of(generate_triangular_number(n)) > num_factors_int do
+        # puts " #{generate_triangular_number(n)}: #{num_factors_of(n)   }   #{num_factors_int}"
+        n += 1
       end
       puts Time.now
-      @tri_num_array.last
+      generate_triangular_number(n)
     end
 
     # http://stackoverflow.com/questions/3398159/all-factors-of-a-given-number
@@ -31,6 +43,11 @@ module Euler
         primes.zip(powers).map{|prime, power| prime ** power}.inject(:*)
       end
       divisors.sort.map{|div| [div, number / div]}
+    end
+
+    def self.num_factors_of(number)
+      primes, powers = number.prime_division.transpose
+      powers.inject(1){ |prod, num| prod *= (num+1); prod}
     end
   end
 end

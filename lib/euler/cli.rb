@@ -52,5 +52,15 @@ module Euler
     def prob12(num_factors)
       puts Euler::Prob12.find_answer(num_factors)
     end
+
+    desc "prob13 ITEM1 ITEM2", "finds the first 10 digits of a sum of a large number of large numbers"
+    def prob13(filename, num_digits)
+      puts Euler::Prob13.new(filename, num_digits).find_sum
+    end
+
+    desc "prob14 ITEM","finds a Collatz sequence given the starting number"
+    def prob14(start_num)
+      puts Euler::Prob14.new(start_num).return_sequence
+    end
   end
 end
