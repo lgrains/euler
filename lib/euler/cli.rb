@@ -62,5 +62,10 @@ module Euler
     def prob14(start_num)
       puts Euler::Prob14.new(start_num).return_sequence
     end
+
+    desc "prob15 ITEM", "finds the number of lattice paths through a grid"
+    def prob15(grid_size)
+      puts Euler::Prob15.new(grid_size).num_paths
+    end
   end
 end
