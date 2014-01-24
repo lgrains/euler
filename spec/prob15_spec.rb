@@ -21,4 +21,21 @@ describe Euler::Prob15 do
                     21=>[22], 22=>[23], 23=>[24],24=>[25], 25=>[]}}
   end
 
+  context "adjacency_matrix, size is 3" do
+    subject {Euler::Prob15.new(3).adjacency_matrix }
+    it { should == [[1,2],[1,4],[2,3],[2,5],[3,6],[4,5],[4,7],[5,6],[5,8],[6,9],[7,8],[8,9],[9,nil]] }
+  end
+
+  context "adjacency_matrix_grid, size is 3" do
+    subject { Euler::Prob15.new(3).adjacency_matrix_grid }
+    it {should == [[ 'f','t','f','t','f','f','f','f','f'],
+                    ['f','f','t','f','t','f','f','f','f'],
+                    ['f','f','f','f','f','t','f','f','f'],
+                    ['f','f','f','f','t','f','t','f','f'],
+                    ['f','f','f','f','f','t','f','t','f'],
+                    ['f','f','f','f','f','f','f','f','t'],
+                    ['f','f','f','f','f','f','f','t','f'],
+                    ['f','f','f','f','f','f','f','f','t'],
+                    ['f','f','f','f','f','f','f','f','f']]}
+    end
 end
