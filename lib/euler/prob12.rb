@@ -7,22 +7,6 @@ module Euler
       n*(n+1)/2
     end
 
-    # def self.find_answer(num_factors)
-    #   puts Time.now
-    #   n = 2
-    #   num_factors_int = num_factors.to_i
-    #   @tri_num_array= []
-    #   factors = factors_of(generate_triangular_number(n))
-    #   puts "  #{factors.each{|f| p f}}  #{factors.to_set.length} "
-    #   while factors.to_set.length <= num_factors_int do
-    #     @tri_num_array << generate_triangular_number(n+=1)
-    #      factors = factors_of(generate_triangular_number(n))
-    #      puts "  #{factors.each{|f| p f}}  #{factors.to_set.length} "
-    #   end
-    #   puts Time.now
-    #   @tri_num_array.last
-    # end
-
     def self.find_answer(num_factors)
       puts Time.now
       n = 2

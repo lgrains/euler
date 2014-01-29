@@ -1,4 +1,3 @@
-
 module Euler
   class Prob2
     def self.sum(upper_limit)
