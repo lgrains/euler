@@ -12,7 +12,7 @@ describe Euler::Prob15 do
       9=>[10,13], 10=> [11,14], 11 => [12,15], 12 => [16], 13=> [14], 14 => [15], 15 => [16], 16 => []} }
   end
 
-  context "generate_adjacency_list, size is 4" do
+  context "generate_adjacency_list, size is 5" do
     subject { Euler::Prob15.new(5).adjacency_list }
     it { should == {1 => [2,6], 2=>[3,7], 3=>[4,8],4=>[5,9],5=>[10],
                     6=>[7,11], 7=>[8,12], 8=>[9,13], 9=>[10,14], 10=>[15],

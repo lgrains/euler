@@ -1,9 +1,14 @@
 module Euler
   class Prob15
+
     def initialize(side_of_square)
       @side_of_square = side_of_square.to_i
       @adjacency_list_hash = {}
       @adjacency_matrix_arr = []
+    end
+
+    def num_paths
+      Models::DirectedGraph.new(adjacency_list).find_num_paths
     end
 
     def adjacency_list
