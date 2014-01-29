@@ -67,5 +67,10 @@ module Euler
     def prob15(grid_size)
       puts Euler::Prob15.new(grid_size).num_paths
     end
+
+    desc "prob16 ITEM", "finds the sum of the digits of a power of 2"
+    def prob16(power_of_two)
+      puts Euler::Prob16.new(power_of_two).sum_of_digits
+    end
   end
 end
