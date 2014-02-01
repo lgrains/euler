@@ -72,5 +72,15 @@ module Euler
     def prob16(power_of_two)
       puts Euler::Prob16.new(power_of_two).sum_of_digits
     end
+
+    desc "prob17 ITEM", "finds the number of digits in the words from 1 to the input number"
+    def prob17(upper_limit)
+      puts Euler::Prob17.new(upper_limit).process
+    end
+
+    desc "prob18 ITEM","finds the path with the highest value in a tree"
+    def prob18(filename)
+      puts Euler::Prob18.new(filename).find_max_cost
+    end
   end
 end

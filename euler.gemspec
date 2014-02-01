@@ -26,4 +26,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "racksh"
 
   spec.add_dependency "thor"
+  spec.add_dependency "linguistics"
+  spec.add_dependency "wordnet"
+  spec.add_dependency "wordnet-defaultdb"
+  spec.add_dependency "rubytree"
 end

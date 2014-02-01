@@ -15,6 +15,8 @@ require "models/node.rb"
 require "models/directed_graph.rb"
 require "euler/prob15"
 require "euler/prob16"
+require "euler/prob17"
+require "euler/prob18"
 
 module Euler
   # Your code goes here...
