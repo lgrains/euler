@@ -4,24 +4,14 @@ module Euler
   class Prob18
     def initialize(filename = 'small_tri.txt')
       @filename = filename
-      @array_of_str = []
       @arr_of_lines = []
       insert_data_into_array
     end
 
     def insert_data_into_array
-      get_arr_of_strings
-      convert_to_arr_of_ints
-    end
-
-    def get_arr_of_strings
       f = File.open(@filename)
-      f.each {|line| @array_of_str << line.split }
-    end
-
-    def convert_to_arr_of_ints
-      @array_of_str.each do |line|
-        @arr_of_lines << line.collect{|s| s.to_i}
+      f.each do |line|
+        @arr_of_lines << line.split.map{|n| n.to_i}
       end
     end
 
