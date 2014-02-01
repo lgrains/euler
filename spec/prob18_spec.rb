@@ -7,7 +7,12 @@ describe Euler::Prob18 do
   end
 
   context 'from file 5_tri.txt' do
-    subject {Euler::Prob18.new('small_tri.txt').find_max_cost}
+    subject {Euler::Prob18.new('5_tri.txt').find_max_cost}
     it { should == 31 }
+  end
+
+  context 'from file large_tri.txt' do
+    subject {Euler::Prob18.new('large_tri.txt').find_max_cost}
+    it { should == 1074 }
   end
 end
